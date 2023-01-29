@@ -1,4 +1,4 @@
-# benford_rs
+# benford
 
 This crate provides a way to test of some given set of numbers conforms to
 [Benford's law](https://en.wikipedia.org/wiki/Benford%27s_law)
@@ -9,7 +9,7 @@ of mapping a number to a digit, by implementing [`BenfordClass`]
 ## Example 1: Fibonacci numbers are Benford
 
 ```rust
-use benford_rs::{BenfordTester, FirstDigitBase10};
+use benford::{BenfordTester, FirstDigitBase10};
 use num::CheckedAdd;
 
 struct Fibonacci<D>(D, D)
@@ -52,7 +52,7 @@ assert!(tester.is_benford());
 ## Example 2: Natural numbers are not Benford
 
 ```rust
-use benford_rs::{BenfordTester, FirstDigitBase10};
+use benford::{BenfordTester, FirstDigitBase10};
 
 let mut tester = BenfordTester::default();
 for val in 1..u16::MAX {

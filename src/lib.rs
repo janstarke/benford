@@ -7,7 +7,7 @@
 //! # Example 1: Fibonacci numbers are Benford
 //! 
 //! ```rust
-//! use benford_rs::{BenfordTester, FirstDigitBase10};
+//! use benford::{BenfordTester, FirstDigitBase10};
 //! use num::CheckedAdd;
 //!
 //! struct Fibonacci<D>(D, D)
@@ -50,7 +50,7 @@
 //! # Example 2: Natural numbers are not Benford
 //! 
 //! ```rust
-//! use benford_rs::{BenfordTester, FirstDigitBase10};
+//! use benford::{BenfordTester, FirstDigitBase10};
 //!
 //! let mut tester = BenfordTester::default();
 //! for val in 1..u16::MAX {

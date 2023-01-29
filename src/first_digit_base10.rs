@@ -12,7 +12,7 @@ use num::{FromPrimitive, Num};
 /// # Example
 /// 
 /// ```rust
-/// use benford_rs::{Digit, FirstDigitBase10};
+/// use benford::{Digit, FirstDigitBase10};
 /// 
 /// assert_eq!(Digit::Three, FirstDigitBase10::from(38974).into());
 /// assert_eq!(Digit::Seven, FirstDigitBase10::from(-738974).into());

@@ -1,11 +1,11 @@
 [package]
-name = "benford_rs"
+name = "benford"
 version = "0.1.0"
 edition = "2021"
 authors = ["Jan Starke <jan.starke@posteo.de>"]
 license = "GPL-3.0"
 description = "library to test the Benford-ness of a given set of numbers"
-repository = "https://github.com/janstarke/benford-rs"
+repository = "https://github.com/janstarke/benford"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
