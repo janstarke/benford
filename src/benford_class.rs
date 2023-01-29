@@ -13,8 +13,8 @@ pub trait BenfordClass:
     + TryFrom<i16>
     + TryFrom<i32>
     + TryFrom<i64>
-    //+ From<f32>
-    //+ From<f64>
+    + From<f32>
+    + From<f64>
     + Into<Digit>
 {
 }

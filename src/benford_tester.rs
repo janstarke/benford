@@ -1,24 +1,18 @@
 use crate::Alpha;
 use crate::{BenfordClass, Digit};
-use num::ToPrimitive;
 use num::FromPrimitive;
+use num::ToPrimitive;
 
+#[derive(Default)]
 pub struct BenfordTester {
-    alpha: Alpha,
     samples: [u64; 10],
 }
 
 impl BenfordTester {
-    pub fn with_alpha(mut self, alpha: Alpha) -> Self {
-        self.alpha = alpha;
-        self
-    }
-
     pub fn chi_squared(&self) -> f64 {
         let mut t = 0.0;
         let n = self.samples.iter().sum::<u64>() as f64;
         println!("n: {n}");
-
 
         for digit_idx in 1..self.samples.len() {
             let digit: Digit = Digit::from_usize(digit_idx).unwrap();
@@ -32,8 +26,13 @@ impl BenfordTester {
         t
     }
 
+    pub fn is_benford_with_alpha(&self, alpha: Alpha) -> bool {
+        self.chi_squared() < Digit::chi_squared(alpha)
+    }
+
+
     pub fn is_benford(&self) -> bool {
-        self.chi_squared() < Digit::chi_squared(self.alpha)
+        self.chi_squared() < Digit::chi_squared(Alpha::Point995)
     }
 
     pub fn add_sample<C>(&mut self, sample: C)
@@ -43,18 +42,8 @@ impl BenfordTester {
         self.add_digit(sample.into());
     }
 
-    pub fn add_digit(&mut self, digit: Digit)
-    {
+    pub fn add_digit(&mut self, digit: Digit) {
         let idx: usize = digit.to_usize().unwrap();
         self.samples[idx] += 1;
-    }
-}
-
-impl Default for BenfordTester {
-    fn default() -> Self {
-        Self {
-            alpha: Alpha::Point995,
-            samples: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        }
     }
 }
