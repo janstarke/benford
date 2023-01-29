@@ -1,0 +1,19 @@
+[package]
+name = "benford_rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jan Starke <jan.starke@posteo.de>"]
+license = "GPL-3.0"
+description = "library to test the Benford-ness of a given set of numbers"
+repository = "https://github.com/janstarke/benford-rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+num = "0.4"
+num-derive = "0.3"
+num-traits = "0.2"
+thiserror = "1"
+
+[dev-dependencies]
+rand = "0.8"
