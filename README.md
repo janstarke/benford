@@ -1,6 +1,6 @@
 # benford
 
-This crate provides a way to test of some given set of numbers conforms to
+This crate provides a way to test if some given set of numbers conforms to
 [Benford's law](https://en.wikipedia.org/wiki/Benford%27s_law)
 
 Currently, only the first digit is being used. You can use your own method
